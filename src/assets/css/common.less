@@ -1,0 +1,338 @@
+@charset "utf-8";
+@theme-cl-1:#2b9cff;// 主题色 深蓝色
+@theme-cl-2:#3e518b;// 主题色
+@cl-1:#e90000;// 图标色
+@cl-2:#e24719;// 图标色
+@cl-3:#E1E4ED;// 图标色
+@cl-4:#F4C11B;// 图标色
+@cl-5:#1FD092;// 图标色
+html, body {
+  /*抗锯齿，使字体图标更清晰*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  color: #313131;
+}
+html, body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, div, a, b, s, i, span, header,
+article, nav, section, footer, form, input, select, option, textarea, button, label, table, tr, td,
+th, thead, tbody, tfoot, canvas, video, audio, svg {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei","Avenir", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+img {
+  vertical-align: bottom;
+  border: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.bg-1{
+  background: @theme-cl-1;
+}
+.bg-2{
+  background: @theme-cl-2;
+}
+.bg-3{
+  background: @cl-2;
+}
+.bg-4{
+  background: @cl-3;
+}
+.bg-5{
+  background: #f6f6f6;
+}
+.bg-6{
+  background: #fff;
+}
+.bg-7{
+  background:@cl-4;
+}
+.bg-8{
+  background:@cl-5;
+}
+
+.cl-1{
+  color: @theme-cl-1;
+}
+.cl-2{
+  color: @theme-cl-2;
+}
+.cl-3{
+  color: @cl-1;
+}
+.cl-4{
+  color: #C1C1C1;
+}
+.clear:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.c-flex{
+  display: flex;
+  align-items: center;
+}
+// 公共容器布局
+.c-layout{
+  position: relative;
+  padding-bottom: 60px;
+  min-height: 100%;
+}
+// 两端布局
+.c-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.c-flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// 公共顶部
+.com-head-step{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: #f6f6f6;
+}
+// 公共表单存展示列表
+.com-row-container{
+  font-size: 15px;
+  background: #fff;
+}
+.com-row-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  .com-row-label{
+  }
+  .com-row-required:before{
+    display: inline-block;
+    margin-right: 2px;
+    content: "*";
+    color: #e90000;
+    font-size: 15px;
+  }
+  .com-row-select{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 50%;
+    text-align: right;
+  }
+  .com-row-placeholder{
+    color: #757575;
+  }
+  .com-row-text{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .com-arrows{
+    position: relative;
+    top: -2px;
+    margin: 0 5px;
+    width: 10px;
+    height: 16px;
+    background: url("../../assets/images/common/icon-3.png") no-repeat center center;
+    background-size: 100% 100%;
+  }
+}
+
+// 公共上传
+.com-upload-img{
+  padding: 10px 0;
+  text-align: center;
+}
+.com-upload-img-1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  .upload-img:first-child{
+    margin-right: 5%;
+  }
+}
+// 解决1像素的问题
+.com-line{
+  width: 100%;
+  height: 1px;
+  background: #EBEBEB;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5); // 纵向缩放
+}
+// 底部按钮
+.foot-btn{
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-size:15px;
+  font-weight:500;
+  border-radius: inherit;
+}
+.foot-btn-1{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  .foot-btn;
+  z-index: 10;
+}
+.foot-btn-2{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  .foot-btn;
+  z-index: 10;
+}
+.btn-bg-1{
+  background:@theme-cl-1;
+  opacity: .2;
+}
+.btn-bg-2{
+  background: @theme-cl-1;
+}
+
+.confirmButton{
+    background: @theme-cl-1;
+    color: #fff;
+}
+.cancelButton{
+  border-right: none;
+}
+// 公共搜索
+.com-my-search{
+}
+
+// 公共展示列表
+.com-lists{
+  .lists-row{
+    margin-bottom: 10px;
+    background: #fff;
+    font-size: 14px;
+  }
+  .list-title-content{
+    padding: 10px 15px;
+  }
+  .list-title{
+    display: flex;
+    align-items: center;
+    width: 85%;
+  }
+  .list-name{
+    font-size: 16px;
+    max-width: 70%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    padding-top: 2px;
+  }
+  .list-icon{
+    margin-left: 12px;
+    width: 6px;
+    height: 12px;
+    background: url("../../assets/images/common/icon-3.png") no-repeat center center;
+    background-size: 100% 100%;
+  }
+  .list-text-msg{
+    margin-left: 12px;
+    padding: 3px 3px 1px 3px;
+    font-size: 10px;
+    color: #fff;
+  }
+  .lists-texts{
+    .list-title-content;
+    padding-bottom: 0;
+    .list-text{
+      padding-bottom: 10px;
+    }
+  }
+  .list-plan{
+    padding: 12.5px 0;
+    text-align: center;
+  }
+}
+
+// 公共无数据
+.com-no-data{
+  padding-top:30%;
+  padding-bottom: 80px;
+  text-align: center;
+  .com-no-icon{
+    width: 100px;
+  }
+  .com-no-msg{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #9B9EAC;
+  }
+  .com-add-btn{
+    padding: 0;
+    width: 110px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid  rgba(43,156,255,.3);
+    background: #fff;
+    box-shadow: none;
+    font-size: 13px;
+  }
+}
+
+// 公共搜索
+.index-top-search{
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #fff;
+  .search-input{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    height: 32px;
+    border-radius: 20px;
+    font-size:13px;
+    color: #C1C1C1;
+  }
+  .search-logo{
+    margin-right: 13px;
+    width: 17px;
+  }
+  .search-text{
+    color: #C1C1C1;
+  }
+  .com-row-text{
+    color: #313131;
+  }
+}
+
+.com-bg{
+  height: 10px;
+}
+
+.mint-cell-wrapper{
+  background: transparent;
+}
+
+// 搜索列表展示
+.search-list-content{
+  .search-list-text{
+    padding: 12px 10px;
+    font-size: 15px;
+    color: #717376;
+  }
+}
